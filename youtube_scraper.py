@@ -82,13 +82,9 @@ def get_recent_videos_for_handles(handles, hours=24):
 #         logging.error(f"Failed to retrieve transcript for {video_id}: {e}")
 #         return None  # Return None if transcript retrieval fails
     
-def load_api_key_from_json(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-        return data['youtube_api_key']
-    
+
 def get_video_transcript(video_id):
-    api_key = load_api_key_from_json('youtube_scraper_api/testing/config.json')
+    api_key = 'AIzaSyBTdgYOJp5q_vCRxkIHxV0ClFxRVSIiKy4'
     details = fetch_video_info(video_id, api_key)
     transcript = fetch_transcript(video_id)
     return transcript
